@@ -4,15 +4,19 @@ from urllib.parse import urlparse
 class ZeroTrustEngine:
     def __init__(self):
         self.blocked_hosts = ['169.254.169.254', 'localhost', '127.0.0.1']
-        self.blocked_patterns = [r'exec\s*\(', r'os\.system', r'subprocess']
+        self.blocked_patterns = [
+            r'exec\s*\(', r'os\.system', r'subprocess', 
+            r'cat\s+', r'rm\s+', r'mv\s+', r'wget\s+', r'curl\s+',
+            r'nc\s+', r'bash\s+', r'sh\s+', r'\.\./'
+        ]
 
     def scan(self, request):
         for host in self.blocked_hosts:
             if host in request: 
                 return {"status": "BLOCKED", "reason": f"HOST_BLOCKED: {host}"}
         for pattern in self.blocked_patterns:
-            if re.search(pattern, request):
-                return {"status": "BLOCKED", "reason": f"INJECTION_DETECTED: {pattern}"}
+            if re.search(pattern, request, re.IGNORECASE):
+                return {"status": "BLOCKED", "reason": f"COMMAND_BLOCKED: {pattern}"}
         return {"status": "SUCCESS", "risk": "low"}
 
 class ZCoreOrchestrator:
