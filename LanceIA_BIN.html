@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LANCEIA_BIN v1.0 | Z-CORE</title>
+<style>
+  body { background:#0a0a0a; color:#00ff41; font-family: 'Courier New', monospace; padding:20px; }
+  .header { border:1px solid #00ff41; padding:10px; margin-bottom:20px; }
+  .btn { background:#00ff41; color:#0a0a0a; border:none; padding:10px 20px; font-weight:bold; cursor:pointer; margin:5px; }
+  .btn:hover { background:#0a0a0a; color:#00ff41; border:1px solid #00ff41; }
+  .log { background:#000; border:1px solid #00ff41; height:300px; overflow-y:scroll; padding:10px; white-space:pre-wrap; }
+  .status { color:#ffff00; }
+  .error { color:#ff0041; }
+  .success { color:#00ff41; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Z-CORE LANCEIA_BIN v1.0</h1>
+  <p>NON DÉPENDANCE. ZERO TRUST NATIF.</p>
+  <p class="status">Status: <span id="status">OFFLINE</span></p>
+</div>
+
+<button class="btn" onclick="startIA()">1. DÉMARRER ORCHESTRATOR</button>
+<button class="btn" onclick="runModule('Console')">2. CONSOLE IA</button>
+<button class="btn" onclick="runModule('Intelligence')">3. INTELLIGENCE</button>
+<button class="btn" onclick="runModule('Audit')">4. VOIR AUDIT.LOG</button>
+<button class="btn" onclick="clearLog()">CLEAR</button>
+
+<div class="log" id="log">[INIT] LANCEIA_BIN prêt. 100% local.</div>
+
+<script>
+// Z-CORE LANCEIA_BIN v1.0
+// Ce HTML ne communique qu'avec l'API locale de zcore_orchestrator.py
+// Port par défaut: 8000. Change si besoin.
+
+const API_URL = "http://localhost:8000";
+const logEl = document.getElementById('log');
+const statusEl = document.getElementById('status');
+
+function log(msg, type='success') {
+    const ts = new Date().toISOString();
+    logEl.innerHTML += `\n[${ts}] <span class="${type}">${msg}</span>`;
+    logEl.scrollTop = logEl.scrollHeight;
+}
+
+function clearLog() { logEl.innerHTML = "[CLEAR] Log vidé"; }
+
+async function apiCall(endpoint, data={}) {
+    try {
+        const res = await fetch(`${API_URL}/${endpoint}`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        });
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+        return await res.json();
+    } catch(e) {
+        log(`ERREUR: ${e.message}. Vérifie que zcore_orchestrator.py tourne.`, 'error');
+        return null;
+    }
+}
+
+async function startIA() {
+    log("Démarrage de zcore_orchestrator.py...", 'status');
+    statusEl.innerText = "STARTING";
+    const res = await apiCall("start");
+    if(res && res.status === "SUCCESS") {
+        statusEl.innerText = "ONLINE";
+        log(`Orchestrator ONLINE. ID: ${res.id}`, 'success');
+    } else {
+        statusEl.innerText = "ERROR";
+    }
+}
+
+async function runModule(moduleName) {
+    log(`Lancement module: ${moduleName}`, 'status');
+    const res = await apiCall("run", {module: moduleName});
+    if(res) {
+        log(`[RESULT] ${moduleName}: ${JSON.stringify(res.result)}`, 'success');
+    }
+}
+
+// Check au chargement
+window.onload = async () => {
+    const res = await apiCall("ping");
+    if(res) {
+        statusEl.innerText = "ONLINE";
+        log("Z-CORE détecté sur localhost:8000", 'success');
+    } else {
+        log("Z-CORE OFFLINE. Lance: python zcore_orchestrator.py --api", 'error');
+    }
+}
+</script>
+</body>
+</html>

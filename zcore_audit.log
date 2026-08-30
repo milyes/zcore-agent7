@@ -1,0 +1,21 @@
+{"ts": "2026-08-27T19:49:52.984350+00:00", "event": {"check": "H202", "in": "ping 8.8.8.8; rm -rf /", "res": {"valid": false, "reason": "Injection détectée"}}, "sig": "05374f9c5b59"}
+{"ts": "2026-08-27T19:49:53.004373+00:00", "event": {"check": "H203", "in": "http://169.254.169.254/latest/meta-data/", "res": {"valid": false, "reason": "SSRF Block: 169.254.169.254"}}, "sig": "28359a2a6e8b"}
+{"ts": "2026-08-27T19:49:53.005121+00:00", "event": {"check": "H204", "in": "192.168.1.1", "res": {"valid": false, "reason": "Plage interdite"}}, "sig": "e1b11c29f4ef"}
+KXeJ6R4fiTGIhZt+Q8yIBGgiVgehqs7UcuLpmxiCHbJjZtaqDB+ZI5iZiWoLitVHLjc4FuOymI4tsbaXGpsOzGBlz7gQBYt61JeTaEyI1VouNy4WuuKelWro/c4CzU3oOzHfoBxR22bfmYlqHJnRWjV7IAy4srStaq+gmQCZX+01d8e6Hh2YJt/QzClYyoUZazd/
+KXeJ6R4fiTGIhZt+Q8yIBGgiVgehqs7UcuLpmxiCH7xqY9aqDB+ZI5iZiWoLitVHLjc4FuOymI4tsbaXGpsOzGBlz7gQBYt61JeTaEyI1VouNy4WuuKelWro/c4CzU3oOzHfoBxR22bfmYlqHJnRWjV7IAy4srStaq+gmQCZX+01d8e6Hh2YJt/QzClYyoUZazd/
+KXeJ6R4fiTGIhZt+Q8yIBGgiVgehqs7UcuLpmxiCGLBqbNaqDB+ZI5iZiWoLitVHLjc4FuOymI4tsbaXGpsOzGBlz7gQBYt61JeTaEyI1VouNy4WuuKelWro/c4CzU3oOzHfoBxR22bfmYlqHJnRWjV7IAy4srStaq+gmQCZX+01d8e6Hh2YJt/QzClYyoUZazd/
+KXeJ6R4fiTGIhZt+Q8yIBGgiVgehqs7UcuLpmxiCGL1gYdaqDB+ZI5iZiWoLitVHLjc4FuOymI4tsbaXGpsOzGBlz7gQBYt61JeTaEyI1VouNy4WuuKelWro/c4CzU3oOzHfoBxR22bfmYlqHJnRWjV7IAy4srStaq+gmQCZX+01d8e6Hh2YJt/QzClYyoUZazd/
+KXeJ6R4fiTGIhZt+Q8yIBGgiVgehqs7UcuLpmxiCGbdiYNaqDB+ZI5iZiWoLitVHLjc4FuOymI4tsbaXGpsOzGBlz7gQBYt61JeTaEyI1VouNy4WuuKelWro/c4CzU3oOzHfoBxR22bfmYlqHJnRWjV7IAy4srStaq+gmQCZX+01d8e6Hh2YJt/QzClYyoUZazd/
+KXeJ6R4fiTGIhZt+Q8yIBGklVgegqsvecuDsmxOLFbJkbNaqDB+ZI5iZiWoLitVHLjc4FuOymI4tsbaXGpsOzGBlz7gQBYt61JeTaEyI1VouNy4WuuKelWro/c4CzU3oOzHfoBxR22bfmYlqHJnRWjV7IAy4srStaq+gmQCZX+01d8e6Hh2YJt/QzClYyoUZazd/
+KXeJ6R4fiTGIhZt+Q8yIBGklVgegqsvecuDsmxOKHbFnY9aqDB+ZI5iZiWoLitVHLjc4FuOymI4tsbaXGpsOzGBlz7gQBYt61JeTaEyI1VouNy4WuuKelWro/c4CzU3oOzHfoBxR22bfmYlqHJnRWjV7IAy4srStaq+gmQCZX+01d8e6Hh2YJt/QzClYyoUZazd/
+KXeJ6R4fiTGIhZt+Q8yIBGklVgegqsvecuDsmxOKHrdhZ9aqDB+ZI5iZiWoLitVHLjc4FuOymI4tsbaXGpsOzGBlz7gQBYt61JeTaEyI1VouNy4WuuKelWro/c4CzU3oOzHfoBxR22bfmYlqHJnRWjV7IAy4srStaq+gmQCZX+01d8e6Hh2YJt/QzClYyoUZazd/
+KXeJ6R4fiTGIhZt+Q8yIBGklVgegqsvecuDsmxOKHrxnZ9aqDB+ZI5iZiWoLitVHLjc4FuOymI4tsbaXGpsOzGBlz7gQBYt61JeTaEyI1VouNy4WuuKelWro/c4CzU3oOzHfoBxR22bfmYlqHJnRWjV7IAy4srStaq+gmQCZX+01d8e6Hh2YJt/QzClYyoUZazd/
+KXeJ6R4fiTGIhZt+Q8yIBGklVgegqsvecuDsmxOKH7djZtaqDB+ZI5iZiWoLitVHLjc4FuOymI4tsbaXGpsOzGBlz7gQBYt61JeTaEyI1VouNy4WuuKelWro/c4CzU3oOzHfoBxR22bfmYlqHJnRWjV7IAy4srStaq+gmQCZX+01d8e6Hh2YJt/QzClYyoUZazd/
+{"ts": "2026-08-30T18:11:18.348711+00:00", "event": {"check": "H202", "in": "ping 8.8.8.8; rm -rf /", "res": {"valid": false, "reason": "Injection détectée"}}, "sig": "05374f9c5b59"}
+{"ts": "2026-08-30T18:11:18.369475+00:00", "event": {"check": "H203", "in": "http://169.254.169.254/latest/meta-data/", "res": {"valid": false, "reason": "SSRF Block: 169.254.169.254"}}, "sig": "28359a2a6e8b"}
+{"ts": "2026-08-30T18:11:18.369904+00:00", "event": {"check": "H204", "in": "192.168.1.1", "res": {"valid": false, "reason": "Plage interdite"}}, "sig": "e1b11c29f4ef"}
+{"ts": "2026-08-30T14:31:19.542431", "event": {"check": "H200", "type": "RUN", "data": {"module": "Console"}, "res": {"valid": true}}, "sig": "a170ad870e53"}
+{"ts": "2026-08-30T14:45:28.455813", "event": {"check": "H200", "type": "START", "data": {}, "res": {"valid": true}}, "sig": "ee2d3a4752bc"}
+{"ts": "2026-08-30T14:45:55.902058", "event": {"check": "H200", "type": "RUN", "data": {"module": "Console"}, "res": {"valid": true}}, "sig": "98480e54ce4f"}
+{"ts": "2026-08-30T14:46:03.869357", "event": {"check": "H200", "type": "RUN", "data": {"module": "Intelligence"}, "res": {"valid": true}}, "sig": "d34e2b520440"}
+{"ts": "2026-08-30T14:46:07.088030", "event": {"check": "H200", "type": "RUN", "data": {"module": "Audit"}, "res": {"valid": true}}, "sig": "8540073ec57e"}
