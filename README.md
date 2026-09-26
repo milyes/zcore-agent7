@@ -22,3 +22,4 @@ Audit SHA256
 
 ## STACK
 Python 3.11, 0 dépendance, 5.2K, 100% Termux Android
+# badge OK
