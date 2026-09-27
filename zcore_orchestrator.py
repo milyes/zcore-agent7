@@ -2,7 +2,7 @@
 # Z-CORE v1.9 OPUS45 - 0 dep - ZeroTrust - 22 logiques
 import http.server, socketserver, http.client, json, os, hashlib, re, time
 from urllib.parse import urlparse
-PORT=8000; MODEL="claude-opus-4-5-20251101"; VERSION="v1.9 UNIFIED OPUS45"; HASH_REF="89b6df2e"
+PORT=8000; MODEL="claude-opus-4-5-20251101"; VERSION="v1.9 UNIFIED OPUS45"; HASH_REF="89b6df2e-v23"
 def zt_check(t,u=""):
     if re.search(r'(;|\||\$\(|`|\$\{).*(rm|wget|curl|bash|sh|nc|python)',t,re.I): raise ValueError("H202 BLOCKED")
     if u:
