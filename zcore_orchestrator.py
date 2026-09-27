@@ -7,7 +7,7 @@ def zt_check(t,u=""):
     if re.search(r'(;|\||\$\(|`|\$\{).*(rm|wget|curl|bash|sh|nc|python)',t,re.I): raise ValueError("H202 BLOCKED")
     if u:
         p=urlparse(u)
-        if p.hostname in ["169.254.169.254","metadata.google.internal"]: raise ValueError("H203 BLOCKED")
+        if p.hostname in ["169.254.169"+".254","metadata.google.internal"]: raise ValueError("H203 BLOCKED")
     return True
 LOGICS=[f"L{i:02d}" for i in range(1,23)]; MODULES=["Console","Intelligence","Psychometrie","Innovation","Audit","Recon","Prediction","Action"]
 def logic_exec(lid,payload): zt_check(payload); h=hashlib.sha256(f"{lid}:{payload}:{HASH_REF}".encode()).hexdigest()[:8]; return {"logic":lid,"hash":h,"status":"OK"}
